@@ -18,7 +18,10 @@ import com.example.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 import com.example.kisileruygulamasi.ui.adapter.KisilerAdapter
 import com.example.kisileruygulamasi.ui.viewModel.AnasayfaViewModel
 import com.example.kisileruygulamasi.ui.viewModel.KisiDetayViewModel
+import com.example.kisileruygulamasi.util.gecisYap
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
     private lateinit var viewModel: AnasayfaViewModel
@@ -52,8 +55,8 @@ class AnasayfaFragment : Fragment() {
         viewModel = tempViewModel
     }
 
-    fun fabTikla(it:View){
-        Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
+    fun fabTikla(it:View) {
+        Navigation.gecisYap(it,R.id.kisiKayitGecis)
     }
 
     override fun onResume() {
